@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Luna&co — Custom Artwork</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --cream: #FDF6EC; --warm-white: #FFFBF5;
+      --terracotta: #D9704A; --blush: #F2A98A;
+      --mustard: #E8C04A; --sage: #8BAF88;
+      --deep: #2C2118; --mid: #6B4F3A; --light-mid: #C49A7A;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--deep); overflow-x: hidden; }
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.2rem 3rem;
+      background: rgba(253,246,236,0.9); backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(217,112,74,0.12);
+    }
+    .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 900; color: var(--terracotta); font-style: italic; text-decoration: none; }
+    .nav-back { display: flex; align-items: center; gap: 0.5rem; text-decoration: none; color: var(--mid); font-size: 0.88rem; font-weight: 500; transition: color 0.2s; }
+    .nav-back:hover { color: var(--terracotta); }
+    .nav-cta { background: var(--terracotta); color: #fff; padding: 0.55rem 1.4rem; border-radius: 50px; font-size: 0.85rem; font-weight: 500; text-decoration: none; transition: background 0.2s; }
+    .nav-cta:hover { background: var(--mid); }
+    .hero {
+      min-height: 52vh; display: flex; flex-direction: column; justify-content: flex-end;
+      padding: 9rem 3rem 4rem; position: relative; overflow: hidden;
+    }
+    .hero-bg { position: absolute; inset: 0; opacity: 0.12; }
+    .hero-icon { font-size: 4rem; margin-bottom: 1rem; position: relative; z-index: 2; }
+    .badge { display: inline-block; background: rgba(255,255,255,0.2); color: #fff; font-size: 0.76rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.38rem 1rem; border-radius: 50px; margin-bottom: 1rem; position: relative; z-index: 2; }
+    .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 5vw, 4.5rem); font-weight: 900; color: #fff; line-height: 1.08; margin-bottom: 1rem; position: relative; z-index: 2; }
+    .hero p { font-size: 1.08rem; color: rgba(255,255,255,0.8); max-width: 620px; line-height: 1.75; position: relative; z-index: 2; }
+    .content { padding: 5rem 3rem; max-width: 1100px; margin: 0 auto; }
+    .details-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 4rem; }
+    .detail-card { background: var(--warm-white); border-radius: 20px; padding: 2rem; border: 1px solid rgba(196,154,122,0.2); }
+    .detail-card h3 { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 700; color: var(--deep); margin-bottom: 0.7rem; }
+    .detail-card p { color: var(--mid); font-size: 0.93rem; line-height: 1.75; }
+    .cta-bar { background: var(--deep); border-radius: 24px; padding: 3rem; text-align: center; }
+    .cta-bar h2 { font-family: 'Playfair Display', serif; font-size: 2rem; color: #fff; margin-bottom: 0.8rem; }
+    .cta-bar p { color: rgba(255,255,255,0.6); margin-bottom: 1.8rem; font-size: 0.98rem; }
+    .cta-btn { display: inline-block; background: var(--terracotta); color: #fff; padding: 0.9rem 2.4rem; border-radius: 50px; font-size: 0.95rem; font-weight: 500; text-decoration: none; transition: background 0.2s, transform 0.15s; }
+    .cta-btn:hover { background: var(--terracotta); filter: brightness(1.1); transform: translateY(-2px); }
+    footer { background: var(--deep); color: rgba(255,255,255,0.45); padding: 2rem 3rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-top: 5rem; }
+    .f-logo { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 900; color: var(--terracotta); font-style: italic; }
+    footer p { font-size: 0.82rem; }
+    @media(max-width:700px){ nav{padding:1rem 1.5rem;} .hero{padding:7rem 1.5rem 3rem;} .content{padding:3rem 1.5rem;} .details-grid{grid-template-columns:1fr;} footer{padding:1.5rem;} }
+
+    .hero { background: linear-gradient(135deg, #D9704Aee 0%, #D9704A99 100%); }
+    .hero-bg { background: radial-gradient(circle at 80% 20%, rgba(255,255,255,0.15), transparent 60%); }
+    .detail-card h3::before { content: ''; display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #D9704A; margin-right: 0.5rem; vertical-align: middle; }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="lunaco.html" class="nav-logo">Luna&co</a>
+  <a href="lunaco.html#services" class="nav-back">← Back to Services</a>
+  <a href="lunaco.html#contact" class="nav-cta">Work With Us</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-icon">🖼️</div>
+  <span class="badge">Luna&co Services</span>
+  <h1>Custom Artwork</h1>
+  <p>We create original, one-of-a-kind pieces tailored to your space, brand, or story. Whether it's a large mural for a restaurant or a set of prints for a cozy café, every commission is crafted with care.</p>
+</section>
+
+<div class="content">
+  <div class="details-grid">
+<div class="detail-card"><h3>What We Create</h3><p>Wall art, murals, framed prints, illustrations, and decorative pieces for homes, hospitality venues, offices, and events.</p></div>
+<div class="detail-card"><h3>How It Works</h3><p>We start with a discovery call to understand your vision, space, and style. From there, we sketch concepts, refine with your feedback, and deliver a final piece you'll love.</p></div>
+<div class="detail-card"><h3>Ideal For</h3><p>Restaurants, cafes, libraries, hotels, home owners, corporate spaces, and event organizers looking for bespoke art that elevates their environment.</p></div>
+<div class="detail-card"><h3>Pricing</h3><p>Every commission is unique. Reach out with your project details and we'll provide a custom quote based on size, complexity, and timeline.</p></div>
+  </div>
+  <div class="cta-bar">
+    <h2>Ready to get started?</h2>
+    <p>Reach out and let's talk about what we can create together.</p>
+    <a href="lunaco.html#contact" class="cta-btn">Get In Touch →</a>
+  </div>
+</div>
+
+<footer>
+  <div class="f-logo">Luna&co</div>
+  <p>© 2025 Luna&co. A Modern Art & Design Studio.</p>
+</footer>
+</body>
+</html>
